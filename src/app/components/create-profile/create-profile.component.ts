@@ -18,10 +18,18 @@ export class CreateProfileComponent implements OnInit {
             profileFPassword: ['', [Validators.required, Validators.maxLength(50)]],
             profileCPassword: ['', [Validators.required, Validators.minLength(3)]],
             profileAge: ['', [Validators.required, Validators.maxLength(50)]],
+            profileSex: ['', [Validators.required, Validators.maxLength(50)]],
             profileOccupation: ['', [Validators.required, Validators.minLength(3)]],
             profileMobile: ['', [Validators.required, Validators.maxLength(50)]],
             profileEmail: ['', [Validators.required, Validators.minLength(3)]]
         });
+
+    // console.log(this.createForm.get('profileUName').touched );
+    // console.log(this.createForm.get('profileUName').dirty);
+    // console.log(this.createForm.get('profileUName').valid);
+  }
+  save(): any {
+      alert('saved');
   }
 
 }

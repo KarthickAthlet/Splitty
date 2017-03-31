@@ -1,19 +1,43 @@
 <div class="panel-body">
   <h2> Welcome to Login Page: </h2>
-  <form class="form-horizontal" novalidate [formGroup]="loginForm">
+  <form class="form-horizontal" novalidate (ngSubmit)="loginEntry()" [formGroup]="loginForm">
     <fieldset>
-      <div class="form-group">
+      <div class="form-group" [ngClass]="{'has-error': (loginForm.get('loginUName').touched || 
+                                              loginForm.get('loginUName').dirty) &&
+                                              !loginForm.get('loginUName').valid }">
         <label class="col-md-2 control-label" for="loginUName">User Name:</label>
         <div class="col-md-8">
           <input class="form-control" type="text" id="loginUName" formControlName="loginUName">
+          <span class="help-block" *ngIf="(loginForm.get('loginUName').touched || 
+                                                         loginForm.get('loginUName').dirty) && 
+                                                         loginForm.get('loginUName').errors">
+                            <span *ngIf="loginForm.get('loginUName').errors.required">
+                                Please enter your first name.
+                            </span>
+          <span *ngIf="loginForm.get('loginUName').errors.minlength">
+                                The first name must be longer than 3 characters.
+                            </span>
+          </span>
         </div>
       </div>
     </fieldset>
     <fieldset>
-      <div class="form-group">
+      <div class="form-group" [ngClass]="{'has-error': (loginForm.get('loginPassword').touched || 
+                                              loginForm.get('loginPassword').dirty) &&
+                                              !loginForm.get('loginPassword').valid }">
         <label class="col-md-2 control-label" for="loginPassword">Password:</label>
         <div class="col-md-8">
           <input class="form-control" type="password" id="loginPassword" formControlName="loginPassword">
+          <span class="help-block" *ngIf="(loginForm.get('loginPassword').touched || 
+                                                         loginForm.get('loginPassword').dirty) && 
+                                                         loginForm.get('loginPassword').errors">
+                            <span *ngIf="loginForm.get('loginPassword').errors.required">
+                                Please enter your first name.
+                            </span>
+          <span *ngIf="loginForm.get('loginPassword').errors.minlength">
+                                The first name must be longer than 3 characters.
+                            </span>
+          </span>
         </div>
       </div>
     </fieldset>

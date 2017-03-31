@@ -8,16 +8,24 @@ import { LoginPageDeclaration } from './login-page-declaration';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-   loginForm: FormGroup;
+  loginForm: FormGroup;
   // loginPageDeclaration: LoginPageDeclaration = new LoginPageDeclaration();
 
-  constructor( private formBuilderProperty: FormBuilder) { }
+  constructor(private formBuilderProperty: FormBuilder) { }
 
   ngOnInit() {
-     this.loginForm = this.formBuilderProperty.group({
-            loginUName: ['', [Validators.required, Validators.minLength(3)]],
-            loginPassword: ['', [Validators.required, Validators.maxLength(50)]]
-        });
+    this.loginForm = this.formBuilderProperty.group({
+      loginUName: ['', [Validators.required, Validators.minLength(3)]],
+      loginPassword: ['', [Validators.required, Validators.maxLength(50)]]
+    });
+
+    // console.log(this.loginForm.get('loginUName').touched );
+    // console.log(this.loginForm.get('loginUName').dirty);
+    // console.log(this.loginForm.get('loginUName').valid);
+  }
+
+  loginEntry() {
+    alert('login success');
   }
 
 }

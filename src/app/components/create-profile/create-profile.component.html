@@ -1,72 +1,168 @@
 <h2> Create your profile: </h2>
-<form class="form-horizontal" novalidate [formGroup]="createForm">
+<form class="form-horizontal" novalidate (ngSubmit)="save()" [formGroup]="createForm">
   <fieldset>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': (createForm.get('profileUName').touched || 
+                                              createForm.get('profileUName').dirty) &&
+                                              !createForm.get('profileUName').valid }">
       <label class="col-md-2 control-label" for="profileUName">User Name:</label>
       <div class="col-md-8">
-      <input class="form-control" type="text" id="profileUName" formControlName="profileUName">
+        <input class="form-control" type="text" id="profileUName" formControlName="profileUName">
+        <span class="help-block" *ngIf="(createForm.get('profileUName').touched || 
+                                                         createForm.get('profileUName').dirty) && 
+                                                         createForm.get('profileUName').errors">
+                            <span *ngIf="createForm.get('profileUName').errors.required">
+                                Please enter your first name.
+                            </span>
+        <span *ngIf="createForm.get('profileUName').errors.minlength">
+                                The first name must be longer than 3 characters.
+                            </span>
+        </span>
       </div>
     </div>
   </fieldset>
   <fieldset>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': (createForm.get('profileFPassword').touched || 
+                                              createForm.get('profileFPassword').dirty) &&
+                                              !createForm.get('profileFPassword').valid }">
       <label class="col-md-2 control-label" for="profileFPassword">Create Password:</label>
       <div class="col-md-8">
-      <input class="form-control" type="password" id="profileFPassword" formControlName="profileFPassword">
+        <input class="form-control" type="password" id="profileFPassword" formControlName="profileFPassword">
+        <span class="help-block" *ngIf="(createForm.get('profileFPassword').touched || 
+                                                         createForm.get('profileFPassword').dirty) && 
+                                                         createForm.get('profileFPassword').errors">
+                            <span *ngIf="createForm.get('profileFPassword').errors.required">
+                                Please enter your first name.
+                            </span>
+        <span *ngIf="createForm.get('profileFPassword').errors.minlength">
+                                The first name must be longer than 3 characters.
+                            </span>
+        </span>
       </div>
     </div>
   </fieldset>
   <fieldset>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': (createForm.get('profileCPassword').touched || 
+                                              createForm.get('profileCPassword').dirty) &&
+                                              !createForm.get('profileCPassword').valid }">
       <label class="col-md-2 control-label" for="profileCPassword">Confirm Password:</label>
       <div class="col-md-8">
-      <input class="form-control" type="password" id="profileCPassword" formControlName="profileCPassword">
+        <input class="form-control" type="password" id="profileCPassword" formControlName="profileCPassword">
+        <span class="help-block" *ngIf="(createForm.get('profileCPassword').touched || 
+                                                         createForm.get('profileCPassword').dirty) && 
+                                                         createForm.get('profileCPassword').errors">
+                            <span *ngIf="createForm.get('profileCPassword').errors.required">
+                                Please enter your first name.
+                            </span>
+        <span *ngIf="createForm.get('profileCPassword').errors.minlength">
+                                The first name must be longer than 3 characters.
+                            </span>
+        </span>
       </div>
     </div>
   </fieldset>
   <fieldset>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': (createForm.get('profileAge').touched || 
+                                              createForm.get('profileAge').dirty) &&
+                                              !createForm.get('profileAge').valid }">
       <label class="col-md-2 control-label" for="profileAge">Age:</label>
       <div class="col-md-8">
-      <input class="form-control" type="text" id="profileAge" formControlName="profileAge">
+        <input class="form-control" type="text" id="profileAge" formControlName="profileAge">
+        <span class="help-block" *ngIf="(createForm.get('profileAge').touched || 
+                                                         createForm.get('profileAge').dirty) && 
+                                                         createForm.get('profileAge').errors">
+                            <span *ngIf="createForm.get('profileAge').errors.required">
+                                Please enter your first name.
+                            </span>
+        <span *ngIf="createForm.get('profileAge').errors.minlength">
+                                The first name must be longer than 3 characters.
+                            </span>
+        </span>
       </div>
     </div>
   </fieldset>
   <fieldset>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': (createForm.get('profileSex').touched || 
+                                              createForm.get('profileSex').dirty) &&
+                                              !createForm.get('profileSex').valid }">
       <label class="col-md-2 control-label" for="profileSex">Sex:</label>
       <div class="col-md-8">
-      <input class="form-control" type="text" id="profileAge" formControlName="profileAge">
+        <input class="form-control" type="text" id="profileSex" formControlName="profileSex">
+        <span class="help-block" *ngIf="(createForm.get('profileSex').touched || 
+                                                         createForm.get('profileSex').dirty) && 
+                                                         createForm.get('profileSex').errors">
+                            <span *ngIf="createForm.get('profileSex').errors.required">
+                                Please enter your first name.
+                            </span>
+        <span *ngIf="createForm.get('profileSex').errors.minlength">
+                                The first name must be longer than 3 characters.
+                            </span>
+        </span>
       </div>
     </div>
   </fieldset>
   <fieldset>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': (createForm.get('profileOccupation').touched || 
+                                              createForm.get('profileOccupation').dirty) &&
+                                              !createForm.get('profileOccupation').valid }">
       <label class="col-md-2 control-label" for="profileOccupation">Occupation:</label>
       <div class="col-md-8">
-      <input class="form-control" type="text" id="profileOccupation" formControlName="profileOccupation">
+        <input class="form-control" type="text" id="profileOccupation" formControlName="profileOccupation">
+        <span class="help-block" *ngIf="(createForm.get('profileOccupation').touched || 
+                                                         createForm.get('profileOccupation').dirty) && 
+                                                         createForm.get('profileOccupation').errors">
+                            <span *ngIf="createForm.get('profileOccupation').errors.required">
+                                Please enter your first name.
+                            </span>
+        <span *ngIf="createForm.get('profileOccupation').errors.minlength">
+                                The first name must be longer than 3 characters.
+                            </span>
+        </span>
       </div>
     </div>
   </fieldset>
   <fieldset>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': (createForm.get('profileMobile').touched || 
+                                              createForm.get('profileMobile').dirty) &&
+                                              !createForm.get('profileMobile').valid }">
       <label class="col-md-2 control-label" for="profileMobile">Phone number:</label>
       <div class="col-md-8">
-      <input class="form-control" type="text" id="profileMobile" formControlName="profileMobile">
+        <input class="form-control" type="text" id="profileMobile" formControlName="profileMobile">
+        <span class="help-block" *ngIf="(createForm.get('profileMobile').touched || 
+                                                         createForm.get('profileMobile').dirty) && 
+                                                         createForm.get('profileMobile').errors">
+                            <span *ngIf="createForm.get('profileMobile').errors.required">
+                                Please enter your first name.
+                            </span>
+        <span *ngIf="createForm.get('profileMobile').errors.minlength">
+                                The first name must be longer than 3 characters.
+                            </span>
+        </span>
       </div>
     </div>
   </fieldset>
   <fieldset>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': (createForm.get('profileEmail').touched || 
+                                              createForm.get('profileEmail').dirty) &&
+                                              !createForm.get('profileEmail').valid }">
       <label class="col-md-2 control-label" for="profileEmail">email Address</label>
       <div class="col-md-8">
-      <input class="form-control" type="text" id="profileEmail" formControlName="profileEmail">
+        <input class="form-control" type="text" id="profileEmail" formControlName="profileEmail">
+        <span class="help-block" *ngIf="(createForm.get('profileEmail').touched || 
+                                                         createForm.get('profileEmail').dirty) && 
+                                                         createForm.get('profileEmail').errors">
+                            <span *ngIf="createForm.get('profileEmail').errors.required">
+                                Please enter your first name.
+                            </span>
+        <span *ngIf="createForm.get('profileEmail').errors.minlength">
+                                The first name must be longer than 3 characters.
+                            </span>
+        </span>
       </div>
     </div>
   </fieldset>
   <fieldset>
     <div class="form-group">
-      <button class="btn btn-primary" type="submit" id="profileSave">Save</button> 
+      <button class="btn btn-primary" type="submit" id="profileSave">Save</button>
     </div>
   </fieldset>
   <br>Dirty {{createForm.dirty}}
