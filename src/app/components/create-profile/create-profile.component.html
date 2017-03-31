@@ -1,20 +1,76 @@
 <h2> Create your profile: </h2>
-<form>
-  <label for="profile-UName">User Name:</label>
-  <input type="text" id="profile-UName" name="profile-UName">
-  <label for="profile-FPassword">Create Password:</label>
-  <input type="password" id="profile-FPassword" name="profile-FPassword">
-  <label for="profile-CPassword">Confirm Password:</label>
-  <input type="password" id="profile-CPassword" name="profile-Password">
-  <label for="profile-Age">Age:</label>
-  <input type="text" id="profile-Age" name="profile-Age">
-  <label for="profile-Sex">Sex:</label>
-  <input type="text" id="profile-Age" name="profile-Age">
-  <label for="profile-Occupation">Occupation:</label>
-  <input type="text" id="profile-Occupation" name="profile-Occupation">
-  <label for="profile-Mobie">Phone number:</label>
-  <input type="text" id="profile-Mobie" name="profile-Mobie">
-  <label for="profile-Email">email Address</label>
-  <input type="text" id="profile-Email" name="profile-Email">
-  <input type="button" id="profile-Save" value="Save">
+<form class="form-horizontal" novalidate [formGroup]="createForm">
+  <fieldset>
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="profileUName">User Name:</label>
+      <div class="col-md-8">
+      <input class="form-control" type="text" id="profileUName" formControlName="profileUName">
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="profileFPassword">Create Password:</label>
+      <div class="col-md-8">
+      <input class="form-control" type="password" id="profileFPassword" formControlName="profileFPassword">
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="profileCPassword">Confirm Password:</label>
+      <div class="col-md-8">
+      <input class="form-control" type="password" id="profileCPassword" formControlName="profileCPassword">
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="profileAge">Age:</label>
+      <div class="col-md-8">
+      <input class="form-control" type="text" id="profileAge" formControlName="profileAge">
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="profileSex">Sex:</label>
+      <div class="col-md-8">
+      <input class="form-control" type="text" id="profileAge" formControlName="profileAge">
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="profileOccupation">Occupation:</label>
+      <div class="col-md-8">
+      <input class="form-control" type="text" id="profileOccupation" formControlName="profileOccupation">
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="profileMobile">Phone number:</label>
+      <div class="col-md-8">
+      <input class="form-control" type="text" id="profileMobile" formControlName="profileMobile">
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="profileEmail">email Address</label>
+      <div class="col-md-8">
+      <input class="form-control" type="text" id="profileEmail" formControlName="profileEmail">
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit" id="profileSave">Save</button> 
+    </div>
+  </fieldset>
+  <br>Dirty {{createForm.dirty}}
+  <br>Touched {{createForm.touched}}
+  <br>Valid {{createForm.valid}}
+  <br>value {{createForm.value| json}}
 </form>

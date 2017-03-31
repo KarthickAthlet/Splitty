@@ -1,8 +1,30 @@
-<h2> Welcome to Login Page: </h2>
-<form>
-  <label for="login-UName">User Name:</label>
-  <input type="text" id="login-UName" name="login-UName">
-   <label for="login-Password">Password:</label>
-  <input type="password" id="login-Password" name="login-Password">
-  <input type="button" id="login-Entry" value="Login">
-</form>
+<div class="panel-body">
+  <h2> Welcome to Login Page: </h2>
+  <form class="form-horizontal" novalidate [formGroup]="loginForm">
+    <fieldset>
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="loginUName">User Name:</label>
+        <div class="col-md-8">
+          <input class="form-control" type="text" id="loginUName" formControlName="loginUName">
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="loginPassword">Password:</label>
+        <div class="col-md-8">
+          <input class="form-control" type="password" id="loginPassword" formControlName="loginPassword">
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit" id="loginEntry">Login</button>
+      </div>
+    </fieldset>
+  </form>
+  <br>Dirty {{loginForm.dirty}}
+  <br>Touched {{loginForm.touched}}
+  <br>Valid {{loginForm.valid}}
+  <br>value {{loginForm.value| json}}
+</div>

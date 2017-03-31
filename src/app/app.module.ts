@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SplitAppBodyComponent } from './components/split-app-body/split-app-body.component';
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,17 @@ import { LoginPageComponent } from './components/login-page/login-page.component
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    ReactiveFormsModule,
+    HttpModule,
+    RouterModule.forRoot([{
+      path: 'login-page',
+      component: LoginPageComponent
+    },
+    {
+      path: 'create-profile-page',
+      component: CreateProfileComponent
+    }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
