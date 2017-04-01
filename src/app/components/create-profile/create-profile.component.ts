@@ -21,7 +21,7 @@ export class CreateProfileComponent implements OnInit {
             profileSex: ['', [Validators.required, Validators.maxLength(50)]],
             profileOccupation: ['', [Validators.required, Validators.minLength(3)]],
             profileMobile: ['', [Validators.required, Validators.maxLength(50)]],
-            profileEmail: ['', [Validators.required, Validators.minLength(3)]]
+            profileEmail: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+')]]
         });
 
     // console.log(this.createForm.get('profileUName').touched );

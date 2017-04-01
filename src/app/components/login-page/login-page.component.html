@@ -43,7 +43,7 @@
     </fieldset>
     <fieldset>
       <div class="form-group">
-        <button class="btn btn-primary" type="submit" id="loginEntry">Login</button>
+        <button class="btn btn-primary" type="submit" id="loginEntry" [disabled]="!loginForm.valid">Login</button>
       </div>
     </fieldset>
   </form>

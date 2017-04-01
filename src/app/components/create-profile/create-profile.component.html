@@ -162,7 +162,7 @@
   </fieldset>
   <fieldset>
     <div class="form-group">
-      <button class="btn btn-primary" type="submit" id="profileSave">Save</button>
+      <button class="btn btn-primary" type="submit" id="profileSave" [disabled]="!createForm.valid">Save</button>
     </div>
   </fieldset>
   <br>Dirty {{createForm.dirty}}
