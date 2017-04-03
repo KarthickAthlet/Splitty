@@ -20,8 +20,7 @@
           </span>
         </div>
       </div>
-    </fieldset>
-    <fieldset>
+   
       <div class="form-group" [ngClass]="{'has-error': (loginForm.get('loginPassword').touched || 
                                               loginForm.get('loginPassword').dirty) &&
                                               !loginForm.get('loginPassword').valid }">
@@ -40,8 +39,7 @@
           </span>
         </div>
       </div>
-    </fieldset>
-    <fieldset>
+   
       <div class="form-group">
         <button class="btn btn-primary" type="submit" id="loginEntry" [disabled]="!loginForm.valid">Login</button>
       </div>
